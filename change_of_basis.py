@@ -81,12 +81,17 @@ def multiply_vector(m,v):
 def changeBasis(old, new, vector):
     adj1=transpose(old)
     v1=multiply_vector(adj1,vector)
-    print(f"In standard basis:{v1}")
     adj2=transpose(new)
     inv2=inverse(adj2)
+    print(inv2)
     result=multiply_vector(inv2,v1)
     print("In new basis:")
     print(result)
+
+def change_to_standard(old,new,vector):
+    adj1=transpose(old)
+    v1=multiply_vector(adj1,vector)
+    print(f"In standard basis:{v1}")
 
 
 
@@ -105,5 +110,10 @@ v=[0 for i in range(rows)]
 for i in range(rows):
     v[i]=int(input(f"v[{i}]:"))
 
+'''m1=[[1,3,4],[2,-1,1],[1,0,2]]
+m2=[[1,0,0],[0,1,0],[0,0,1]]
+v=[2,3,-1]'''
+
+#change_to_standard(m1,m2,v)
 changeBasis(m1,m2,v)
 
